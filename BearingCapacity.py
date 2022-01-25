@@ -5,7 +5,7 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha):
   from scipy.integrate import quad
   import matplotlib.pyplot as plt
   Op_mean = 4*width
-  intF = quad(MaxTensileForce,0,length,args=(resistance*1000,f1,f2,Op_mean,alpha))
+  intF = quad(MaxTensileForce,0,length,args=(resistance*1000,f1,f2,Op_mean,alpha))[0]
   
   plt.plot(width,intF)
   
