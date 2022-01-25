@@ -12,9 +12,9 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha, plot=False):
   width_line = []
   resistance_line = []
   length_line = []
-  width_number = np.linspace(0,1,100)
-  resistance_number = np.linspace(0,10,100)
-  length_number = np.linspace(10,20,100)
+  width_number = np.linspace(0,1.1,100)
+  resistance_number = np.linspace(9,21,100)
+  length_number = np.linspace(0,11,100)
   
   if plot == True:
     for i in range(100):
