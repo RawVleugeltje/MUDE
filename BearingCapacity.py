@@ -1,7 +1,7 @@
-def MaxTensileForce(length, resistance, f1, f2, Op_mean, alpha, plot=False):
+def MaxTensileForce(length, resistance, f1, f2, Op_mean, alpha):
   return resistance*f1*f2*Op_mean*alpha
 
-def IntTensileForce(length, resistance, f1, f2, width, alpha):
+def IntTensileForce(length, resistance, f1, f2, width, alpha, plot=False):
   from scipy.integrate import quad
   import matplotlib.pyplot as plt
   import numpy as np
