@@ -20,22 +20,26 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha):
   
   for i in range(100):
     width_line.append(quad(MaxTensileForce,0,length,args=(resistance*1000,f1,f2,width_number[i]*4,alpha))[0])
+    resistance_number.append(quad(MaxTensileForce,0,length,args=(resistance[i]*1000,f1,f2,width_number*4,alpha))[0])
+    length_number.append(quad(MaxTensileForce,0,length[i],args=(resistance*1000,f1,f2,width_number*4,alpha))[0])
   
   fig, ax = plt.subplots(1,3,figsize=(15,10))
-  ax[0].plot(intF,width,'r.',markersize=15)
+  ax[0].plot(width_line,width_number,'r')
+  ax[0].plot(intF,width,'r.',markersize=30)
   ax[0].set_xlabel('Tensile Force [kN]')
   ax[0].set_ylabel('Width [m]')
   ax[0].set_ylim(0,1.1)
   ax[0].set_xlim(200,60000)
-  ax[0].plot(width_line,width_number)
   
-  ax[1].plot(intF,length,'b.',markersize=15)
+  ax[1].plot(length_line,length_number,'b')
+  ax[1].plot(intF,length,'b.',markersize=30)
   ax[1].set_xlabel('Tensile Force [kN]')
   ax[1].set_ylabel('Length [m]')
   ax[1].set_ylim(0,11)
   ax[1].set_xlim(200,60000)
   
-  ax[2].plot(intF,resistance,'g.',markersize=15)
+  ax[2].plot(resistance_line,resistance_number,'g')
+  ax[2].plot(intF,resistance,'g.',markersize=30)
   ax[2].set_xlabel('Tensile Force [kN]')
   ax[2].set_ylabel('Resistance [mPa]')
   ax[2].set_ylim(9,21)
