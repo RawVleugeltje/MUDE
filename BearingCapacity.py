@@ -27,6 +27,6 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha):
   ax[2].set_xlabel('Tensile Force [kN]')
   ax[2].set_ylabel('Resistance [mPa]')
   ax[2].set_ylim(9,21)
-  ax[2].set_xlim(200,600000)
+  ax[2].set_xlim(200,60000)
   
   return intF
