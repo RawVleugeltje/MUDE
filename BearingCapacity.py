@@ -29,6 +29,7 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha, plot=False):
     ax[0].set_ylabel('Width [m]')
     ax[0].set_ylim(0,1.1)
     ax[0].set_xlim(200,60000)
+    ax[0].grid()
   
     ax[1].plot(length_line,length_number,'b')
     ax[1].plot(intF,length,'b.',markersize=30)
@@ -36,6 +37,7 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha, plot=False):
     ax[1].set_ylabel('Length [m]')
     ax[1].set_ylim(0,11)
     ax[1].set_xlim(200,60000)
+    ax[1].grid()
   
     ax[2].plot(resistance_line,resistance_number,'g')
     ax[2].plot(intF,resistance,'g.',markersize=30)
@@ -43,5 +45,6 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha, plot=False):
     ax[2].set_ylabel('Resistance [mPa]')
     ax[2].set_ylim(9,21)
     ax[2].set_xlim(200,60000)
-  
+    ax[2].grid()
+    
   return intF
