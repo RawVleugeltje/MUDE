@@ -10,6 +10,17 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha):
   
   print(f'Maximum tensile force = {intF:.0f} kN')
   
-  plt.plot(width,intF,'.',markersize=15)
+  fig, ax = plt.subplots(1,3)
+  ax[0].plot(intF,width,'r.',markersize=15)
+  ax[0].set_xlabel('Tensile Force [kN]')
+  ax[0].set_ylabel('Width [m]')
+  
+  ax[1].plot(intF,length,'b.',markersize=15)
+  ax[1].set_xlabel('Tensile Force [kN]')
+  ax[1].set_ylabel('Length [m]')
+  
+  ax[2].plot(intF,resistance,'g.',markersize=15)
+  ax[2].set_xlabel('Tensile Force [kN]')
+  ax[2].set_ylabel('Resistance [mPa]')
   
   return intF
