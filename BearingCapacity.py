@@ -19,7 +19,7 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha):
   length_number = np.linspace(10,20,100)
   
   for i in range(100):
-    width_line.append(quad(MaxTensilForce,0,length,args=(resistance*1000,f1,f2,width_number[i]*4,alpha))[0])
+    width_line.append(quad(MaxTensileForce,0,length,args=(resistance*1000,f1,f2,width_number[i]*4,alpha))[0])
   
   fig, ax = plt.subplots(1,3,figsize=(15,10))
   ax[0].plot(intF,width,'r.',markersize=15)
