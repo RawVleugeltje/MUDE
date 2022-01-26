@@ -47,6 +47,9 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha, plot=False):
     ax[2].set_xlim(200,60000)
     ax[2].grid()
     
+    plt.tight_layout()
+    plt.show()
+    
   return intF
 
 def ClumpCriterion(width, length, r_grid, v_soil, v_water, v_concrete):
