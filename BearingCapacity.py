@@ -22,7 +22,7 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha, plot=False):
       resistance_line.append(quad(MaxTensileForce,0,length,args=(resistance_number[i]*1000,f1,f2,width*4,alpha))[0])
       length_line.append(quad(MaxTensileForce,0,length_number[i],args=(resistance*1000,f1,f2,width*4,alpha))[0])
   
-  fig, ax = plt.subplots(1,3,figsize=(15,10))
+  fig, ax = plt.subplots(1,3,figsize=(10,10))
   ax[0].plot(width_line,width_number,'r')
   ax[0].plot(intF,width,'r.',markersize=30)
   ax[0].set_xlabel('Tensile Force [kN]')
