@@ -107,5 +107,5 @@ def ClumpCriterionFig(width, length, r_grid, v_soil, v_water, v_concrete):
       
     plt.tight_layout()
     
-  return 
+    return 
   
