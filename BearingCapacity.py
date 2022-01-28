@@ -88,24 +88,24 @@ def ClumpCriterionFig(width, length, r_grid, v_soil, v_water, v_concrete):
     width_line.append(ClumpCriterion(width_number[i],length,r_grid,v_soil,v_water,v_concrete))
     length_line.append(ClumpCriterion(width,length_number[i],r_grid,v_soil,v_water,v_concrete))
   
-    fig, ax = plt.subplots(1,2,figsize=(12,4))
-    ax[0].plot(width_line,width_number,'r')
-    ax[0].plot(F_tension_max,width,'r.',markersize=30)
-    ax[0].set_xlabel('Tensile Force [kN]')
-    ax[0].set_ylabel('Width [m]')
+  fig, ax = plt.subplots(1,2,figsize=(12,4))
+  ax[0].plot(width_line,width_number,'r')
+  ax[0].plot(ClumpCriterion(width,length,r_grid,v_soil,v_water,v_concrete),width,'r.',markersize=30)
+  ax[0].set_xlabel('Tensile Force [kN]')
+  ax[0].set_ylabel('Width [m]')
 #       ax[0].set_ylim(0,1.1)
 #       ax[0].set_xlim(200,60000)
-    ax[0].grid()
+  ax[0].grid()
   
-    ax[1].plot(length_line,length_number,'b')
-    ax[1].plot(F_tension_max,length,'b.',markersize=30)
-    ax[1].set_xlabel('Tensile Force [kN]')
-    ax[1].set_ylabel('Length [m]')
+  ax[1].plot(length_line,length_number,'b')
+  ax[1].plot(ClumpCriterion(width,length,r_grid,v_soil,v_water,v_concrete),length,'b.',markersize=30)
+  ax[1].set_xlabel('Tensile Force [kN]')
+  ax[1].set_ylabel('Length [m]')
 #       ax[1].set_ylim(0,11)
 #       ax[1].set_xlim(200,60000)
-    ax[1].grid()
+  ax[1].grid()
       
-    plt.tight_layout()
+  plt.tight_layout()
     
   return 
   
