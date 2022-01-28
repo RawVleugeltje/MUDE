@@ -85,7 +85,7 @@ def ClumpCriterion(width, length, r_grid, v_soil, v_water, v_concrete, plot=Fals
       ax[0].grid()
   
 #       ax[1].plot(length_line,length_number,'b')
-      ax[1].plot(F-tension_max,length,'b.',markersize=30)
+      ax[1].plot(F_tension_max,length,'b.',markersize=30)
       ax[1].set_xlabel('Tensile Force [kN]')
       ax[1].set_ylabel('Length [m]')
 #       ax[1].set_ylim(0,11)
