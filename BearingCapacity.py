@@ -49,7 +49,7 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha, plot=False):
     
         plt.tight_layout()
     
-  return intF
+    return intF
 
 def ClumpCriterion(width, length, r_grid, v_soil, v_water, v_concrete):
     import numpy as np
