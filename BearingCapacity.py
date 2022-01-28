@@ -81,7 +81,7 @@ def ClumpCriterionFig(width, length, r_grid, v_soil, v_water, v_concrete):
   
   width_line = []
   length_line = []
-  width_number = np.linspace(0,0.8,100)
+  width_number = np.linspace(0,0.75,100)
   length_number = np.linspace(0,11,100)
       
   for i in range(100):
