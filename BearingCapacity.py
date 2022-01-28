@@ -76,6 +76,9 @@ def ClumpCriterion(width, length, r_grid, v_soil, v_water, v_concrete):
     return F_tension_max
 
 def ClumpCriterionFig(width, length, r_grid, v_soil, v_water, v_concrete):
+  import numpy as np
+  import matplotlib.pyplot as plt
+  
   width_line = []
   length_line = []
   width_number = np.linspace(0,0.8,100)
