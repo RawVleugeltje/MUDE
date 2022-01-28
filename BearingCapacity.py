@@ -51,7 +51,7 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha, plot=False):
     
   return intF
 
-def ClumpCriterion(width, length, r_grid, v_soil, v_water, v_concrete, plot=False):
+def ClumpCriterion(width, length, r_grid, v_soil, v_water, v_concrete):
   import numpy as np
   import matplotlib.pyplot as plt
   
@@ -73,26 +73,35 @@ def ClumpCriterion(width, length, r_grid, v_soil, v_water, v_concrete, plot=Fals
     v_weight_pile = v_concrete - v_water
 
     F_tension_max = Vclump * v_weight_soil + Vpile * v_weight_pile
-    
-    if plot == True:
-      fig, ax = plt.subplots(1,2,figsize=(12,4))
-#       ax[0].plot(width,F_tension_max,'r')
-      ax[0].plot(F_tension_max,width,'r.',markersize=30)
-      ax[0].set_xlabel('Tensile Force [kN]')
-      ax[0].set_ylabel('Width [m]')
+ 
+def ClumpCriterionFig(width, length, r_grid, v_soil, v_water, v_concrete):
+  width_line = []
+  length_line = []
+  width_number = np.linspace(0,0.8,100)
+  length_number = np.linspace(0,11,100)
+      
+  for i in range(100):
+    width_line.append(ClumpCriterion(width_number[i],length,r_grid,v_soil,v_water,v_concrete))
+    length_line.append(ClumpCriterion(width,length_number[i],r_grid,v_soil,v_water,v_concrete))
+  
+    fig, ax = plt.subplots(1,2,figsize=(12,4))
+    ax[0].plot(width_line,width_number,'r')
+    ax[0].plot(F_tension_max,width,'r.',markersize=30)
+    ax[0].set_xlabel('Tensile Force [kN]')
+    ax[0].set_ylabel('Width [m]')
 #       ax[0].set_ylim(0,1.1)
 #       ax[0].set_xlim(200,60000)
-      ax[0].grid()
+    ax[0].grid()
   
-#       ax[1].plot(length_line,length_number,'b')
-      ax[1].plot(F_tension_max,length,'b.',markersize=30)
-      ax[1].set_xlabel('Tensile Force [kN]')
-      ax[1].set_ylabel('Length [m]')
+    ax[1].plot(length_line,length_number,'b')
+    ax[1].plot(F_tension_max,length,'b.',markersize=30)
+    ax[1].set_xlabel('Tensile Force [kN]')
+    ax[1].set_ylabel('Length [m]')
 #       ax[1].set_ylim(0,11)
 #       ax[1].set_xlim(200,60000)
-      ax[1].grid()
+    ax[1].grid()
       
-      plt.tight_layout()
+    plt.tight_layout()
     
-  return F_tension_max
+  return 
   
