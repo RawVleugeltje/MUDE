@@ -75,7 +75,7 @@ def ClumpCriterion(width, length, r_grid, v_soil, v_water, v_concrete):
     F_tension_max = Vclump * v_weight_soil + Vpile * v_weight_pile
     
  return F_tension_max
- 
+
 def ClumpCriterionFig(width, length, r_grid, v_soil, v_water, v_concrete):
   width_line = []
   length_line = []
