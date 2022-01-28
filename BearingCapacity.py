@@ -53,6 +53,8 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha, plot=False):
 
 def ClumpCriterion(width, length, r_grid, v_soil, v_water, v_concrete, plot=False):
   import numpy as np
+  import matplotlib.pyplot as plt
+  
   Deq = np.sqrt(np.pi/4) * width
   if r_grid < 6 * Deq:
     print('Overlap')
