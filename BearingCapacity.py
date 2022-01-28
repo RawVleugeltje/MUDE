@@ -52,29 +52,28 @@ def IntTensileForce(length, resistance, f1, f2, width, alpha, plot=False):
   return intF
 
 def ClumpCriterion(width, length, r_grid, v_soil, v_water, v_concrete):
-  import numpy as np
-  import matplotlib.pyplot as plt
-  
-  Deq = np.sqrt(np.pi/4) * width
-  if r_grid < 6 * Deq:
-    print('Overlap')
-  else:
-    d = 6 * Deq
-    b = 1/2 * (d - Deq)
-    V1 = np.pi/4 *d**2 * (length - b)
-    V2 = 1/3 * np.pi/4 * d**2 * (b + 1/2*Deq)
-    V3 = 1/3 * np.pi/4 * Deq**2 * 1/2*Deq
-    V4 = np.pi/4 * Deq**2 * length
-    Vclump = V1 + V2 + V3 + V4
+    import numpy as np
+    import matplotlib.pyplot as plt
+    Deq = np.sqrt(np.pi/4) * width
+    if r_grid < 6 * Deq:
+        print('Overlap')
+    else:
+        d = 6 * Deq
+        b = 1/2 * (d - Deq)
+        V1 = np.pi/4 *d**2 * (length - b)
+        V2 = 1/3 * np.pi/4 * d**2 * (b + 1/2*Deq)
+        V3 = 1/3 * np.pi/4 * Deq**2 * 1/2*Deq
+        V4 = np.pi/4 * Deq**2 * length
+        Vclump = V1 + V2 + V3 + V4
     
-    Vpile = V4
+        Vpile = V4
 
-    v_weight_soil = v_soil - v_water
-    v_weight_pile = v_concrete - v_water
+        v_weight_soil = v_soil - v_water
+        v_weight_pile = v_concrete - v_water
 
     F_tension_max = Vclump * v_weight_soil + Vpile * v_weight_pile
     
- return F_tension_max
+    return F_tension_max
 
 def ClumpCriterionFig(width, length, r_grid, v_soil, v_water, v_concrete):
   width_line = []
