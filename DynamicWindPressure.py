@@ -21,7 +21,7 @@ def TheoreticalWindPlot(tau_w, rho, k, z, z0):
   fig, ax = plt.subplots(1,2,figsize=(12,4))
     
   ax[0].plot(tau_line, tau_number)
-  ax[0].plot(p_w,tau_w,'r.',markersize=30)
+  ax[0].plot(TheoreitcalWind(tau_w,rho,k,z,z0),tau_w,'r.',markersize=30)
   ax[0].set_xlabel('Dynamic wind pressure [Pa]')
   ax[0].set_ylabel('Surface shear stress [Pa]')
   ax[0].set_ylim(0,1.1)
@@ -29,7 +29,7 @@ def TheoreticalWindPlot(tau_w, rho, k, z, z0):
   ax[0].grid()
   
   ax[1].plot(z_line, z_number)
-  ax[1].plot(p_w,z,'b.',markersize=30)
+  ax[1].plot(TheoreitcalWind(tau_w,rho,k,z,z0),z,'b.',markersize=30)
   ax[1].set_xlabel('Dynamic wind pressure [Pa]')
   ax[1].set_ylabel('Elevation [m]')
   ax[1].set_ylim(0,510)
