@@ -33,7 +33,7 @@ def TheoreticalWindPlot(tau_w, rho, k, z, z0):
   ax[1].set_xlabel('Dynamic wind pressure [Pa]')
   ax[1].set_ylabel('Elevation [m]')
   ax[1].set_ylim(0,510)
-  ax[1].set_xlim(0.102)
+  ax[1].set_xlim(0,102)
   ax[1].grid()
     
   plt.tight_layout()
