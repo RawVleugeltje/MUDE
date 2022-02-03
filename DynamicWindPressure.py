@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 def TheoreticalWind(tau_w, rho, k, z, z0):
   u_star = np.sqrt(tau_w/rho)
