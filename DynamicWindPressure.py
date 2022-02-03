@@ -16,7 +16,7 @@ def TheoreticalWindPlot(tau_w, rho, k, z, z0):
   
   for i in range(100):
     tau_line.append(TheoreticalWind(tau_number[i],rho,k,z,z0))
-    z_line.append(TheoreticalWind(tau_number,rho,k,z_number[i],z0))
+    z_line.append(TheoreticalWind(tau_w,rho,k,z_number[i],z0))
   
   fig, ax = plt.subplots(1,2,figsize=(12,4))
     
