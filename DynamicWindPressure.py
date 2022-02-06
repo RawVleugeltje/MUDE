@@ -70,8 +70,8 @@ def DynamicWindPlot(height, C_D, rho, beta_t, alpha, u_1h_10m):
   ax[1].plot(DynamicWind(height, C_D, rho, beta_t, alpha, u_1h_10m),u_1h_10m,'b.',markersize=30)
   ax[1].set_xlabel('Dynamic wind pressure [Pa]')
   ax[1].set_ylabel('Average wind velocity at 10m during 1h [m/s]')
-#   ax[1].set_ylim(25,33)
-#   ax[1].set_xlim(0,1005)
+  ax[1].set_ylim(25,33)
+  ax[1].set_xlim(0,3005)
   ax[1].grid()
     
   plt.tight_layout()
