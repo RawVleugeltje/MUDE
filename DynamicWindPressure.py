@@ -39,3 +39,9 @@ def TheoreticalWindPlot(tau_w, rho, k, z, z0):
   plt.tight_layout()
   
   return
+
+def DynamicWind(height, C_D, T_year, rho, beta_t, alpha, u_1h_10m):
+  u = beta_t * (height / 10)**alpha * u_1h_10m
+  q = 0.5 * rho * u**2 * C_D
+  return q
+  
