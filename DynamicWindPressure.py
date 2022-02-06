@@ -52,7 +52,7 @@ def DynamicWindPlot(height, C_D, T_year, rho, beta_t, alpha, u_1h_10m):
   T_year_number = np.linspace(50,500,100)
   
   for i in range(100):
-    height_line.append(DynamoicWind(height_number[i], C_D, T_year, rho, beta_t, alpha, u_1h_10m))
+    height_line.append(DynamicWind(height_number[i], C_D, T_year, rho, beta_t, alpha, u_1h_10m))
     T_year_line.append(DynamicWind(height, C_D, T_year_number[i], rho, beta_t, alpha, u_1h_10m))
   
   fig, ax = plt.subplots(1,2,figsize=(12,4))
