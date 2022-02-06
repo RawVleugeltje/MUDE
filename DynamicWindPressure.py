@@ -45,3 +45,34 @@ def DynamicWind(height, C_D, T_year, rho, beta_t, alpha, u_1h_10m):
   q = 0.5 * rho * u**2 * C_D
   return q
   
+def DynamicWindPlot(height, C_D, T_year, rho, beta_t, alpha, u_1h_10m):
+  height_line = []
+  T_year_line = []
+  height_number = np.linspace(10,1000,100)
+  T_year_number = np.linspace(50,500,100)
+  
+  for i in range(100):
+    height_line.append(DynamoicWind(height_number[i], C_D, T_year, rho, beta_t, alpha, u_1h_10m))
+    T_year_line.append(DynamicWind(height, C_D, T_year_number[i], rho, beta_t, alpha, u_1h_10m))
+  
+  fig, ax = plt.subplots(1,2,figsize=(12,4))
+    
+  ax[0].plot(height_line, height_number, 'r')
+  ax[0].plot(DynamicWind(height, C_D, T_year, rho, beta_t, alpha, u_1h_10m),height,'r.',markersize=30)
+  ax[0].set_xlabel('Dynamic wind pressure [Pa]')
+  ax[0].set_ylabel('Height [m]')
+#   ax[0].set_ylim(0,1.1)
+#   ax[0].set_xlim(0,102)
+  ax[0].grid()
+  
+  ax[1].plot(T_year_line, T_year_number, 'b')
+  ax[1].plot(DynamiclWind(height, C_D, T_year, rho, beta_t, alpha, u_1h_10m),T_year,'b.',markersize=30)
+  ax[1].set_xlabel('Dynamic wind pressure [Pa]')
+  ax[1].set_ylabel('Return periodd [year]')
+#   ax[1].set_ylim(0,510)
+#   ax[1].set_xlim(0,102)
+  ax[1].grid()
+    
+  plt.tight_layout()
+  
+  return
