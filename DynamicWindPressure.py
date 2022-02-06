@@ -53,7 +53,7 @@ def DynamicWindPlot(height, C_D, rho, beta_t, alpha, u_1h_10m):
   
   for i in range(100):
     height_line.append(DynamicWind(height_number[i], C_D, rho, beta_t, alpha, u_1h_10m))
-  for i in rangw(2):
+  for i in range(2):
     u_1h_10m_line.append(DynamicWind(height, C_D, rho, beta_t, alpha, u_1h_10m_number[i]))
   
   fig, ax = plt.subplots(1,2,figsize=(12,4))
