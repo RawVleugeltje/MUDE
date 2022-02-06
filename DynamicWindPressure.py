@@ -48,7 +48,7 @@ def DynamicWind(height, C_D, T_year, rho, beta_t, alpha, u_1h_10m):
 def DynamicWindPlot(height, C_D, T_year, rho, beta_t, alpha, u_1h_10m):
   height_line = []
   T_year_line = []
-  height_number = np.linspace(10,1000,100)
+  height_number = np.linspace(0,1000,100)
   T_year_number = np.linspace(50,500,100)
   
   for i in range(100):
