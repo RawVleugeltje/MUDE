@@ -66,7 +66,7 @@ def DynamicWindPlot(height, C_D, T_year, rho, beta_t, alpha, u_1h_10m):
   ax[0].grid()
   
   ax[1].plot(T_year_line, T_year_number, 'b')
-  ax[1].plot(DynamiclWind(height, C_D, T_year, rho, beta_t, alpha, u_1h_10m),T_year,'b.',markersize=30)
+  ax[1].plot(DynamicWind(height, C_D, T_year, rho, beta_t, alpha, u_1h_10m),T_year,'b.',markersize=30)
   ax[1].set_xlabel('Dynamic wind pressure [Pa]')
   ax[1].set_ylabel('Return periodd [year]')
 #   ax[1].set_ylim(0,510)
