@@ -1,6 +1,14 @@
 def MRL(sample, alpha): #MRL function
     import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy.stats import norm
+    import seaborn as sns; sns.set(style = 'whitegrid')
+    from scipy.stats import genpareto
+    import pandas as pd
+    import math as mt
+    import scipy.special as sm
     #Defining the threshold array and its step
     step = np.quantile(sample, .995)/60
     threshold = np.arange(0, max(sample), step=step) 
